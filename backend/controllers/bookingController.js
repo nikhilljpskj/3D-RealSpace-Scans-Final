@@ -8,11 +8,11 @@ exports.createBooking = async (req, res) => {
         const result = await bookingModel.createBooking(bookingData);
 
         // Send confirmation email
-        await sendConfirmationEmail(bookingData.email, {
-            bookingId: result.insertId,
-            date: bookingData.date, // Assuming these fields are in bookingData
-            time: bookingData.time,
-        });
+        // await sendConfirmationEmail(bookingData.email, {
+        //     bookingId: result.insertId,
+        //     date: bookingData.date, // Assuming these fields are in bookingData
+        //     time: bookingData.time,
+        // });
 
         res.status(201).json({ message: 'Booking created successfully', bookingId: result.insertId });
     } catch (error) {

@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet";
 import BgGlassmorphism from "components/BgGlassmorphism/BgGlassmorphism";
 import BackgroundSection from "components/BackgroundSection/BackgroundSection";
 import SectionHero from "./SectionHero";
-// import SectionClientSay from "components/SectionClientSay/SectionClientSay";
+// import SectionClientSay from "components/SectionClientSay/SectionClientSay"; 1
 import SectionSliderNewCategories from "components/SectionSliderNewCategories/SectionSliderNewCategories";
 import {SERVICES} from 'data/services'
 import IndustryAndGeographicExpertise from "components/IndustryAndGeographicExpertise/IndustryAndGeographicExpertise";
