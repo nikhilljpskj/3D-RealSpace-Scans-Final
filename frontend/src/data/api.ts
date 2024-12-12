@@ -1,4 +1,4 @@
 // const REACT_APP_BASE_URL = "http://localhost:5000" #development
-const REACT_APP_BASE_URL = 'http://real3dspacescan.com:5000' // production
+const REACT_APP_BASE_URL = 'https://real3dspacescan.com' // production
 
 export { REACT_APP_BASE_URL }
