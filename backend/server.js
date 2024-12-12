@@ -11,7 +11,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: ['http://localhost:3000','https://real3dspacescan.com/'],
+  origin: ['http://localhost:3000','https://real3dspacescan.com/','http://real3dspacescan.com/','www.real3dspacescan.com'],
   credentials: true,
 }));
 
