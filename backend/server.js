@@ -26,5 +26,6 @@ app.use('/api/users', userRoutes);
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-  createSuperUser();
+  createSuperUser('SYSTEM ADMIN','sysadmin@example.com','406aa0EeTtFa5Z3');
+  createSuperUser('Brun Moussiesse','moussiesse@sbcglobal.net',`K}owWhs[Qt=Qd=,X;a*`);
 });

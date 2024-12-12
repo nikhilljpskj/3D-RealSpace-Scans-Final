@@ -35,7 +35,6 @@ const BookingPage: React.FC = () => {
     numberOfRooms: [],
     outputFormats: [] as string[],
     additionalServices: [] as string[],
-    completionDate: '',
     specialInstructions: '',
     budgetRange: 500,
     projectTimeline: 'Flexible',

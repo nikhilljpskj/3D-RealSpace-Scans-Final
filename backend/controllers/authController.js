@@ -42,9 +42,8 @@ const registerUser = async (req, res) => {
   }
 };
 
-const createSuperUser = async () => {
-  const hashedPassword = await bcrypt.hash('406aa0EeTtFa5Z3', 10);
-  const email = "sysadmin@example.com";
+const createSuperUser = async (username,email, password) => {
+  const hashedPassword = await bcrypt.hash(password, 10);
 
   try {
     
@@ -54,7 +53,7 @@ const createSuperUser = async () => {
       return;
     }
 
-    await createUser('sysadmin', email, '0000000000', hashedPassword, true);
+    await createUser(username, email, '0000000000', hashedPassword, true);
   } catch (error) {
     console.error('Error creating user:', error);
   }

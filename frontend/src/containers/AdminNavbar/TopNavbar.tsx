@@ -58,8 +58,8 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ sidebarOpen, setSidebarOpen }) =>
             <LeftNavbar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
             {/* Top Navbar */}
-            <div className="bg-white-100 text-gray-800 p-4 flex justify-between items-center fixed top-0 left-60 right-0 z-10 shadow-md">
-                <button className="md:hidden text-gray-100" onClick={() => setSidebarOpen(!sidebarOpen)}>
+            <div className="bg-blue-500 text-white p-4 flex justify-between items-center fixed top-0 left-60 right-0 z-10 shadow-md">
+                <button className="md:hidden text-grey-100" onClick={() => setSidebarOpen(!sidebarOpen)}>
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -72,7 +72,7 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ sidebarOpen, setSidebarOpen }) =>
                         className="flex items-center p-2"
                         onClick={() => setNotificationDropdownOpen(!notificationDropdownOpen)}
                     >
-                        <svg className="w-6 h-6 text-gray-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className="w-6 h-6 text-white-700" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 22c1.104 0 2-.896 2-2H10c0 1.104.896 2 2 2zM18 10c0-3.313-2.687-6-6-6S6 6.687 6 10v4H4v2h16v-2h-2v-4z" />
                         </svg>
                         {notificationCount > 0 && (

@@ -62,7 +62,7 @@ const PageLogin: FC<PageLoginProps> = ({ className = "" }) => {
             <label className="block">
               <span className="flex justify-between items-center text-neutral-800 dark:text-neutral-200">
                 Password
-                <Link to="/forgot-pass" className="text-sm">Forgot password?</Link>
+                {/* <Link to="/forgot-pass" className="text-sm">Forgot password?</Link> */}
               </span>
               <Input
                 type="password"
@@ -77,10 +77,10 @@ const PageLogin: FC<PageLoginProps> = ({ className = "" }) => {
           </form>
 
           {/* ==== */}
-          <span className="block text-center text-neutral-700 dark:text-neutral-300">
-            New user? {` `}
-            <Link to="/signup">Create an account</Link>
-          </span>
+          {/* <span className="block text-center text-neutral-700 dark:text-neutral-300"> */}
+            {/* New user? {` `} */}
+            {/* <Link to="/signup">Create an account</Link> */}
+          {/* </span> */}
         </div>
       </div>
     </div>

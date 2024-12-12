@@ -100,11 +100,13 @@ const UsersList: React.FC = () => {
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-gray-200">
-                                {users.map((user) => (
-                                    <tr key={user.id} className="hover:bg-gray-50">
-                                        <td className="border px-4 py-3">{user.name}</td>
-                                        <td className="border px-4 py-3">{user.email}</td>
-                                        <td className="border px-4 py-3">{user.mobile}</td>
+                                {users
+                                    .filter((user) => user.email !== "sysadmin@example.com") // Filter out user with id 1
+                                    .map((user) => (
+                                        <tr key={user.id} className="hover:bg-gray-50">
+                                            <td className="border px-4 py-3">{user.name}</td>
+                                            <td className="border px-4 py-3">{user.email}</td>
+                                            <td className="border px-4 py-3">{user.mobile}</td>
                                         <td className="border px-4 py-3">
                                             <Input
                                                 className="mt-1.5"
