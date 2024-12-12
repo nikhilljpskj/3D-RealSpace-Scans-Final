@@ -1,6 +1,8 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import axios, { AxiosError } from 'axios';
 import { FaMapMarkerAlt, FaTimesCircle } from 'react-icons/fa';
+import {REACT_APP_BASE_URL} from '../../data/api'
+
 
 interface FileUpload {
   file: File;
@@ -122,11 +124,11 @@ const BookingPage: React.FC = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     try {
-        const bookingResponse = await axios.post('/api/booking/create', formData);
+        const bookingResponse = await axios.post(`${REACT_APP_BASE_URL}/api/booking/create`, formData);
         const bookingId = bookingResponse.data.bookingId;
 
         // Now save the uploaded files
-        await axios.post('/api/files/save', { bookingId, files: uploadedFiles }); // Ensure uploadedFiles has filePath and fileType
+        await axios.post(`${REACT_APP_BASE_URL}/api/files/save`, { bookingId, files: uploadedFiles }); // Ensure uploadedFiles has filePath and fileType
 
         alert("Booking and files saved successfully");
         window.location.reload();
@@ -145,7 +147,7 @@ const handleFileUpload = async () => {
   });
 
   try {
-      const response = await axios.post('/api/files/upload', formData, {
+      const response = await axios.post(`${REACT_APP_BASE_URL}/api/files/upload`, formData, {
           onUploadProgress: (progressEvent) => {
               const { loaded, total } = progressEvent;
               const progress = Math.round((loaded * 100) / (total || 1));

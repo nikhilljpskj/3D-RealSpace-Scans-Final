@@ -34,7 +34,7 @@ const ViewBooking: React.FC = () => {
     useEffect(() => {
         const fetchBookings = async () => {
             try {
-                const response = await axios.get('/api/booking/viewbooking');
+                const response = await axios.get(`${REACT_APP_BASE_URL}/api/booking/viewbooking`);
                 setBookings(response.data);
             } catch (error) {
                 console.error('Error fetching bookings:', error);
