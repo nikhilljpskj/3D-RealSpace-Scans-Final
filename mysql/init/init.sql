@@ -18,7 +18,6 @@ CREATE TABLE `bookings` (
   `numberOfRooms` varchar(255) DEFAULT NULL,
   `outputFormats` varchar(255) DEFAULT NULL,
   `additionalServices` text DEFAULT NULL,
-  `completionDate` date DEFAULT NULL,
   `specialInstructions` text DEFAULT NULL,
   `budgetRange` decimal(10,2) DEFAULT NULL,
   `projectTimeline` enum('Flexible','Urgent','Standard') NOT NULL,

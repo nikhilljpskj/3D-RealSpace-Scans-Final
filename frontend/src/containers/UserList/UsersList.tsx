@@ -12,7 +12,7 @@ interface User {
     name: string;
     email: string;
     mobile: string;
-    password?: string; // To store the new password for update
+    password?: string;
 }
 
 const UsersList: React.FC = () => {
@@ -30,7 +30,7 @@ const UsersList: React.FC = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const response = await axios.get("/api/users");
+                const response = await axios.get(`${REACT_APP_BASE_URL}/api/users`);
                 setUsers(response.data);
             } catch (error) {
                 console.error("Error fetching users:", error);

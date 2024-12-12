@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import LeftNavbar from "containers/AdminNavbar/LeftNavbar"; // Adjust the import path as necessary
 import TopNavbar from "containers/AdminNavbar/TopNavbar"; // Adjust the import path as necessary
+import {REACT_APP_BASE_URL} from '../../data/api'
+
 
 export interface PageSignUpProps {
   className?: string;
@@ -31,7 +33,7 @@ const PageSignUp: FC<PageSignUpProps> = ({ className = "" }) => {
     setError(""); // Clear previous errors
 
     try {
-      const response = await axios.post("/api/auth/register", {
+      const response = await axios.post(`${REACT_APP_BASE_URL}/api/auth/register`, {
         name,
         email,
         mobile,
