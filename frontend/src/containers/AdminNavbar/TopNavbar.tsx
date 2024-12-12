@@ -2,6 +2,8 @@ import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import LeftNavbar from "./LeftNavbar";
 import axios from "axios";
+import {REACT_APP_BASE_URL} from '../../data/api'
+
 
 interface TopNavbarProps {
     sidebarOpen: boolean;
@@ -25,7 +27,7 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ sidebarOpen, setSidebarOpen }) =>
     useEffect(() => {
         const fetchPendingBookings = async () => {
             try {
-                const response = await axios.get(`/api/booking/pending`);
+                const response = await axios.get(`${REACT_APP_BASE_URL}/api/booking/pending`);
                 setNotificationCount(response.data.ptotalCount);
                 const pendingNames = response.data.pendingBookings.map((booking: { fullName: string }) => booking.fullName);
                 setNotifications(pendingNames);

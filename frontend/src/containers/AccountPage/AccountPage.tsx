@@ -6,6 +6,8 @@ import LeftNavbar from "containers/AdminNavbar/LeftNavbar";
 import TopNavbar from "containers/AdminNavbar/TopNavbar"; 
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import {REACT_APP_BASE_URL} from '../../data/api'
+
 
 const AccountPage: React.FC = () => {
     const userId = localStorage.getItem("userId");
@@ -27,7 +29,7 @@ const AccountPage: React.FC = () => {
     useEffect(() => {
         const fetchUserDetails = async () => {
             try {
-                const response = await axios.get(`/api/users/${userId}`);
+                const response = await axios.get(`${REACT_APP_BASE_URL}/api/users/${userId}`);
                 setUserDetails({
                     updateFullName: response.data.name,
                     updateEmail: response.data.email,
@@ -52,7 +54,7 @@ const AccountPage: React.FC = () => {
 
     const handleUpdate = async () => {
         try {
-            const response = await axios.put(`/api/users/${userId}`, {
+            const response = await axios.put(`${REACT_APP_BASE_URL}/api/users/${userId}`, {
                 fullName: userDetails.updateFullName,
                 email: userDetails.updateEmail,
                 mobile: userDetails.updateMobile,

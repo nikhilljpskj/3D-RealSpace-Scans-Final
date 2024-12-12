@@ -4,6 +4,8 @@ import LeftNavbar from "containers/AdminNavbar/LeftNavbar";
 import TopNavbar from "containers/AdminNavbar/TopNavbar";
 import Input from "shared/Input/Input";
 import { useNavigate } from "react-router-dom";
+import {REACT_APP_BASE_URL} from '../../data/api'
+
 
 interface User {
     id: number;
@@ -52,7 +54,7 @@ const UsersList: React.FC = () => {
         if (!confirmUpdate) return;
 
         try {
-            await axios.put(`/api/users/${userId}`, {
+            await axios.put(`${REACT_APP_BASE_URL}/api/users/${userId}`, {
                 fullName: user.name,
                 email: user.email,
                 mobile: user.mobile,
@@ -69,7 +71,7 @@ const UsersList: React.FC = () => {
         if (!confirmRemove) return;
 
         try {
-            await axios.delete(`/api/users/deleteuser/${userId}`);
+            await axios.delete(`${REACT_APP_BASE_URL}/api/users/deleteuser/${userId}`);
             setUsers(users.filter(user => user.id !== userId));
         } catch (error) {
             console.error("Error removing user:", error);

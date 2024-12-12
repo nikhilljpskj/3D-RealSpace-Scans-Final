@@ -3,6 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import LeftNavbar from "containers/AdminNavbar/LeftNavbar";
 import TopNavbar from "containers/AdminNavbar/TopNavbar";
+import {REACT_APP_BASE_URL} from '../../data/api'
+
 
 interface FileDetail {
     filePath: string;
@@ -53,7 +55,7 @@ const BookingDetails: React.FC = () => {
     useEffect(() => {
         const fetchBookingDetails = async () => {
             try {
-                const response = await axios.get(`/api/booking/bookingdetails/${id}`);
+                const response = await axios.get(`${REACT_APP_BASE_URL}/api/booking/bookingdetails/${id}`);
                 setBooking(response.data);
             } catch (error) {
                 console.error('Error fetching booking details:', error);
@@ -64,7 +66,7 @@ const BookingDetails: React.FC = () => {
 
     const handleDownload = async (filePath: string) => {
         try {
-            const response = await axios.get(`/api/files/download/${filePath.split('/').pop()}`, {
+            const response = await axios.get(`${REACT_APP_BASE_URL}/api/files/download/${filePath.split('/').pop()}`, {
                 responseType: 'blob',
             });
             const url = window.URL.createObjectURL(new Blob([response.data]));

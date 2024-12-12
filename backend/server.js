@@ -5,14 +5,18 @@ const { createSuperUser } = require('./controllers/authController');
 const bookingRoutes = require('./routes/bookingRoutes');
 const fileRoutes = require('./routes/fileRoutes');
 const userRoutes = require('./routes/userRoutes');
+const cors = require('cors');
 
 dotenv.config();
 const app = express();
 
-app.use(express.json());
+app.use(cors({
+  origin: 'http://localhost:3000',
+  credentials: true,
+}));
 
-// Create a temporary super user on server start
-createSuperUser();
+
+app.use(express.json());
 
 app.use('/api/auth', authRoutes);
 app.use('/api/booking', bookingRoutes);
@@ -22,4 +26,5 @@ app.use('/api/users', userRoutes);
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+  createSuperUser();
 });

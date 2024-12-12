@@ -5,6 +5,8 @@ import { Bar, Pie } from "react-chartjs-2";
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ArcElement } from 'chart.js';
 import LeftNavbar from "containers/AdminNavbar/LeftNavbar";
 import TopNavbar from "containers/AdminNavbar/TopNavbar";
+import {REACT_APP_BASE_URL} from '../../data/api'
+
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ArcElement);
 
@@ -26,7 +28,7 @@ const AdminDashboard: React.FC = () => {
     useEffect(() => {
         const fetchPendingBookings = async () => {
             try {
-                const response = await axios.get(`/api/booking/pending?page=${pendingPage}`);
+                const response = await axios.get(`${REACT_APP_BASE_URL}/api/booking/pending?page=${pendingPage}`);
                 setPendingCount(response.data.ptotalCount);
             } catch (error) {
                 console.error('Error fetching pending bookings:', error);
@@ -38,7 +40,7 @@ const AdminDashboard: React.FC = () => {
     useEffect(() => {
         const fetchAllBookings = async () => {
             try {
-                const response = await axios.get(`/api/booking/all?page=${allPage}`);
+                const response = await axios.get(`${REACT_APP_BASE_URL}/api/booking/all?page=${allPage}`);
                 setAllCount(response.data.atotalCount);
             } catch (error) {
                 console.error('Error fetching all bookings:', error);

@@ -1,5 +1,5 @@
 const db = require('../config/db');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const createUser = (name, email, mobile, password, isAdmin = false) => {
   return new Promise((resolve, reject) => {
     const query = 'INSERT INTO users (name, email, mobile, password, isAdmin) VALUES (?, ?, ?, ?, ?)';
@@ -35,7 +35,6 @@ const updateUser = (id, userData) => {
     try {
       let hashedPassword = userData.password;
 
-      // Hash the password if it's provided and non-empty
       if (userData.password) {
         hashedPassword = await bcrypt.hash(userData.password, 10);
       }
@@ -63,7 +62,7 @@ const updateUser = (id, userData) => {
         resolve(results);
       });
     } catch (error) {
-      reject(error); // Handle hashing error
+      reject(error);
     }
   });
 };

@@ -1,0 +1,60 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: 406aa0EeTtFa5Z3
+      MYSQL_DATABASE: 3drealspacescans
+      MYSQL_USER: sysadmin
+      MYSQL_PASSWORD: 406aa0EeTtFa5Z3
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./mysql/init:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"
+    networks:
+      - app_network
+    healthcheck: 
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+
+  backend:
+    build:
+      context: ./backend
+    container_name: backend_server
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_HOST: db
+      DB_USER: sysadmin
+      DB_PASSWORD: 406aa0EeTtFa5Z3 
+      DB_NAME: 3drealspacescans
+      JWT_SECRET: JOyMJUnjtFQXBzaA2DUgeXBHCQ76VasE
+
+    volumes:
+      - ./backend/uploads:/usr/src/app/uploads
+    ports:
+      - "5000:5000"
+    networks:
+      - app_network
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: react_frontend
+    depends_on:
+      - backend
+    ports:
+      - "3000:80"
+    networks:
+      - app_network
+
+volumes:
+  db_data:
+
+networks:
+  app_network:

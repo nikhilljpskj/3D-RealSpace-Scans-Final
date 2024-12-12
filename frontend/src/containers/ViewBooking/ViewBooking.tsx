@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import LeftNavbar from "containers/AdminNavbar/LeftNavbar";
 import TopNavbar from "containers/AdminNavbar/TopNavbar";
+import {REACT_APP_BASE_URL} from '../../data/api'
+
 
 interface Booking {
     id: number;
@@ -43,7 +45,7 @@ const ViewBooking: React.FC = () => {
 
     const updateBookingStatus = async (bookingId: number) => {
         try {
-            await axios.put(`/api/booking/${bookingId}/status`, { status: 1 });
+            await axios.put(`${REACT_APP_BASE_URL}/api/booking/${bookingId}/status`, { status: 1 });
         } catch (error) {
             console.error('Error updating booking status:', error);
         }

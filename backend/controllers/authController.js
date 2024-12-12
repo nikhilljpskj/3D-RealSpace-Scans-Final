@@ -20,6 +20,7 @@ const loginUser = async (req, res) => {
     const token = generateToken(user.id);
     res.json({ token, userId: user.id, email: user.email, admin: user.isAdmin });
   } catch (error) {
+    console.log("Error is", error);
     res.status(500).json({ message: 'Server error', error });
   }
 };
@@ -42,22 +43,20 @@ const registerUser = async (req, res) => {
 };
 
 const createSuperUser = async () => {
-  const hashedPassword = await bcrypt.hash('adminpassword', 10);
-  const email = "admin@example.com";
+  const hashedPassword = await bcrypt.hash('406aa0EeTtFa5Z3', 10);
+  const email = "sysadmin@example.com";
 
   try {
     
     const existingUser = await findUserByEmail(email);
 
     if (existingUser) {
-      console.log(`Super user already exists. Login using "${email}".`);
       return;
     }
 
-    await createUser('Admin', email, '0000000000', hashedPassword, true);
-    console.log('Super user created successfully');
+    await createUser('sysadmin', email, '0000000000', hashedPassword, true);
   } catch (error) {
-    console.error('Error creating super user:', error);
+    console.error('Error creating user:', error);
   }
 };
 

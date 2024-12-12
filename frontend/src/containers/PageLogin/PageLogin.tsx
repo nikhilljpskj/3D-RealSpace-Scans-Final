@@ -4,6 +4,7 @@ import Input from "shared/Input/Input";
 import { Link, useNavigate } from "react-router-dom";
 import ButtonPrimary from "shared/Button/ButtonPrimary";
 import axios from "axios";
+import {REACT_APP_BASE_URL} from '../../data/api'
 
 export interface PageLoginProps {
   className?: string;
@@ -20,8 +21,8 @@ const PageLogin: FC<PageLoginProps> = ({ className = "" }) => {
     setError(""); // Clear previous errors
 
     try {
-      const response = await axios.post("/api/auth/login", { email, password });
-
+      console.log(`base url is ${REACT_APP_BASE_URL}`);
+      const response = await axios.post(`${REACT_APP_BASE_URL}/api/auth/login`, { email, password });
       const { token, userId, email: userEmail, admin: userAdmin } = response.data; // Destructure to get userId and email
       localStorage.setItem("jwtToken", token);
       localStorage.setItem("userId", userId.toString()); // Ensure userId is a string
