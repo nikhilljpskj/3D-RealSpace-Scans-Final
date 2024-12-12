@@ -21,7 +21,6 @@ const PageLogin: FC<PageLoginProps> = ({ className = "" }) => {
     setError(""); // Clear previous errors
 
     try {
-      console.log(`base url is ${REACT_APP_BASE_URL}`);
       const response = await axios.post(`${REACT_APP_BASE_URL}/api/auth/login`, { email, password });
       const { token, userId, email: userEmail, admin: userAdmin } = response.data; // Destructure to get userId and email
       localStorage.setItem("jwtToken", token);
