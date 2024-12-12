@@ -15,9 +15,9 @@ const widgetMenus: WidgetFooterMenu[] = [
     title: "Company",
     menus: [
       { href: "/about", label: "About" },
-      { href: "#", label: "Testimonials" },
-      { href: "#", label: "Terms & Conditions" },
-      { href: "#", label: "Case Studies" },
+      // { href: "#", label: "Testimonials" },
+      // { href: "#", label: "Terms & Conditions" },
+      // { href: "#", label: "Case Studies" },
     ],
   },
   {
@@ -67,12 +67,12 @@ const Footer: React.FC = () => {
         <Link to="/">
           <img 
             src="Logo.png" 
-            alt="3DRealspace Scans" 
+            alt="Real3dspacescan" 
             className="w-40 object-contain" // Adjusted width of the logo
           />
         </Link>
           <p className="mt-4 text-sm text-neutral-600 dark:text-neutral-300 text-justify">
-            3DRealspace Scans provides innovative 3D scanning and virtual tour services across the USA. Specializing in digital twins for construction, architecture, and virtual staging, we bring spaces to life with precision and immersive detail, setting new standards in virtual engagement.
+            Real3dspacescan provides innovative 3D scanning and virtual tour services across the USA. Specializing in digital twins for construction, architecture, and virtual staging, we bring spaces to life with precision and immersive detail, setting new standards in virtual engagement.
           </p>
 
         </div>
@@ -85,7 +85,7 @@ const Footer: React.FC = () => {
         <div className="text-sm">
           <h2 className="font-semibold text-neutral-700 dark:text-neutral-200">Contact Info</h2>
           <ul className="mt-5 space-y-4">
-            <li>Email: monemails@gmail.com</li>
+            <li>Email: info@real3dspacescan.com</li>
             <li>Phone: 818-533-8313</li>
             <li>Address: Van Nuys, California</li>
           </ul>

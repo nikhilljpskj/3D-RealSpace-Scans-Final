@@ -64,7 +64,7 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ sidebarOpen, setSidebarOpen }) =>
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
-                <div className="text-xl font-semibold tracking-wide ml-4">3DRealSpace Scans</div>
+                <div className="text-xl font-semibold tracking-wide ml-4">Real3dspacescan</div>
 
                 {/* Notification Bell */}
                 <div className="relative ml-auto" ref={dropdownRef}>

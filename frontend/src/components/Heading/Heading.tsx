@@ -4,16 +4,18 @@ import NextPrev from "shared/NextPrev/NextPrev";
 export interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
   fontClass?: string;
   desc?: ReactNode;
+  contact?: string;
   hasNextPrev?: boolean;
   isCenter?: boolean;
 }
 
 const Heading: React.FC<HeadingProps> = ({
   children,
-  desc = "Popular places to stay that 3drealspacescans recommends for you",
+  desc = "",
   className = "mb-12 lg:mb-16 text-neutral-900 dark:text-neutral-50",
   isCenter = false,
   hasNextPrev = false,
+  contact,
   ...args
 }) => {
   return (
@@ -31,6 +33,12 @@ const Heading: React.FC<HeadingProps> = ({
         {desc && (
           <span className="mt-2 md:mt-3 font-normal block text-base sm:text-xl text-neutral-500 dark:text-neutral-400">
             {desc}
+          </span>
+        )}
+        {contact && (
+          <span className="mt-2 md:mt-3 font-normal block text-base sm:text-sm text-neutral-500 dark:text-neutral-400">
+            Contact us:{" "}
+            <span className="font-bold italic">{contact}</span>
           </span>
         )}
       </div>

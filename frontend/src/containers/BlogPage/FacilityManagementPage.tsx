@@ -51,7 +51,7 @@ const FacilityManagementPage: React.FC = () => {
       {/* Why Choose Us Section */}
       <section className="benefits-section space-y-8">
         <h2 className="text-2xl md:text-3xl font-semibold text-center text-neutral-800 dark:text-neutral-200">
-          Why Choose 3DRealspace Scans for Facility Management?
+          Why Choose Real3dspacescan for Facility Management?
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>

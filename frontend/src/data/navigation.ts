@@ -52,21 +52,21 @@ const companyChildElements: NavItemType[] = [
     href: "/about",
     name: "About",
   },
-  {
-    id: ncNanoId(),
-    href: "/",
-    name: "Testimonials",
-  },
-  {
-    id: ncNanoId(),
-    href: "/",
-    name: "Terms and Conditions",
-  },
-  {
-    id: ncNanoId(),
-    href: "/",
-    name: "Case studies",
-  },
+  // {
+  //   id: ncNanoId(),
+  //   href: "/",
+  //   name: "Testimonials",
+  // },
+  // {
+  //   id: ncNanoId(),
+  //   href: "/",
+  //   name: "Terms and Conditions",
+  // },
+  // {
+  //   id: ncNanoId(),
+  //   href: "/",
+  //   name: "Case studies",
+  // },
 
 ];
 

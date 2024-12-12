@@ -25,7 +25,7 @@ const MainNav1: FC<MainNav1Props> = ({ className = "" }) => {
           <Link to="/">
             <img 
               src="Logo.png" 
-              alt="3DRealspace Scans" 
+              alt="Real3dspacescan" 
               className="h-14 w-auto object-contain" 
             />
           </Link>
@@ -49,7 +49,7 @@ const MainNav1: FC<MainNav1Props> = ({ className = "" }) => {
           <Link to="/">
             <img 
               src="Logo.png" 
-              alt="3DRealspace Scans" 
+              alt="Real3dspacescan" 
               className="h-14 w-auto object-contain" 
             />
           </Link>
