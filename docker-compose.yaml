@@ -12,6 +12,7 @@ services:
       - ./mysql/init:/docker-entrypoint-initdb.d
     ports:
       - "3306:3306"
+    restart: always
     networks:
       - app_network
     healthcheck: 
@@ -28,6 +29,7 @@ services:
     depends_on:
       db:
         condition: service_healthy
+    restart: always
     environment:
       DB_HOST: db
       DB_USER: sysadmin
@@ -50,6 +52,7 @@ services:
       - backend
     ports:
       - "3000:80"
+    restart: always
     networks:
       - app_network
 
