@@ -1,38 +1,14 @@
 import SectionSliderNewCategories from "components/SectionSliderNewCategories/SectionSliderNewCategories";
 import React, { useEffect } from "react";
-// import SectionSubscribe2 from "components/SectionSubscribe2/SectionSubscribe2";
-// import SectionOurFeatures from "components/SectionOurFeatures/SectionOurFeatures";
 import SectionHowItWork from "components/SectionHowItWork/SectionHowItWork";
-// import BackgroundSection from "components/BackgroundSection/BackgroundSection";
-// import { TaxonomyType } from "data/types";
-// import SectionGridAuthorBox from "components/SectionGridAuthorBox/SectionGridAuthorBox";
 import SectionHero2 from "components/SectionHero2/SectionHero2";
-//
-// import logo1 from "images/logos/nomal/1.png";
-// import logo1Dark from "images/logos/dark/1.png";
-// //
-// import logo2 from "images/logos/nomal/2.png";
-// import logo2Dark from "images/logos/dark/2.png";
-// //
-// import logo3 from "images/logos/nomal/3.png";
-// import logo3Dark from "images/logos/dark/3.png";
-// //
-// import logo4 from "images/logos/nomal/4.png";
-// import logo4Dark from "images/logos/dark/4.png";
-// //
-// import logo5 from "images/logos/nomal/5.png";
-// import logo5Dark from "images/logos/dark/5.png";
-//
 import HIW1img from "images/HIW2-1.png";
 import HIW2img from "images/HIW2-2.png";
 import HIW3img from "images/HIW2-3.png";
 import HIW1imgDark from "images/HIW2-1-dark.png";
 import HIW2imgDark from "images/HIW2-2-dark.png";
 import HIW3imgDark from "images/HIW2-3-dark.png";
-// import rightImgPng from "images/our-features-2.png";
 import IndustryAndGeographicExpertise from "components/IndustryAndGeographicExpertise/IndustryAndGeographicExpertise"
-// import SectionGridFeatureProperty from "./SectionGridFeatureProperty";
-// import SectionDowloadApp from "./SectionDowloadApp";
 import FAQSection from "components/FAQSection/FAQSection";
 import {SERVICES} from 'data/services';
 import {Helmet} from 'react-helmet';
